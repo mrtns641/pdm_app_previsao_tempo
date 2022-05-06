@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Cartao from './Cartao'
 import { 
   Button,
   FlatList, 
@@ -50,7 +51,9 @@ export default function App() {
       <FlatList 
         data={previsoes}
         renderItem={p => (
-          <Text>{JSON.stringify(p)}</Text>
+          <Cartao>
+            <Text>{JSON.stringify(p)}</Text>
+          </Cartao>
         )}
       />
     </View>
