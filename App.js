@@ -25,7 +25,13 @@ export default function App() {
 
   const obterPrevisoes = () => {
     const endPoint = `${PROTOCOL}://${BASE_URL}?lang=${LANGUAGE}&units=${UNITS}&cnt=${CNT}&appid=${APPID}&q=${cidade}`
-    console.log(endPoint)
+    fetch(endPoint)
+      .then(response => {
+        return response.json()
+      })
+      .then (dados => {
+        setPrevisoes(dados['list'])
+      })
   }
   return (
     <View style={styles.containerView}>
@@ -44,7 +50,7 @@ export default function App() {
       <FlatList 
         data={previsoes}
         renderItem={p => (
-          <Text>{JSON.stringify(previsao)}</Text>
+          <Text>{JSON.stringify(p)}</Text>
         )}
       />
     </View>
