@@ -22,6 +22,11 @@ export default function App() {
   const capturarCidade = (cidadeDigitada) => {
     setCidade(cidadeDigitada)
   }
+
+  const obterPrevisoes = () => {
+    const endPoint = `${PROTOCOL}://${BASE_URL}?lang=${LANGUAGE}&units=${UNITS}&cnt=${CNT}&appid=${APPID}&q=${cidade}`
+    console.log(endPoint)
+  }
   return (
     <View style={styles.containerView}>
       <View style={styles.entradaView}>
@@ -33,6 +38,7 @@ export default function App() {
         />
         <Button 
           title="OK"
+          onPress={obterPrevisoes}
         />
       </View>
       <FlatList 
