@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Cartao from './Cartao'
+import PrevisaoItem from './components/PrevisaoItem';
 import { 
   Button,
   FlatList, 
@@ -48,25 +48,25 @@ export default function App() {
           onPress={obterPrevisoes}
         />
       </View>
-      <FlatList 
-        data={previsoes}
-        renderItem={p => (
-          <Cartao>
-            <Text>{JSON.stringify(p)}</Text>
-          </Cartao>
-        )}
-      />
+      <View style={{alignItems: 'center'}}>
+        <FlatList 
+          data={previsoes}
+          renderItem={p => (
+            <PrevisaoItem previsao={p.item} />
+          )}
+        />
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
  containerView: {
-   padding: 40,
+   padding: 40
  },
  entradaView: {
    marginBottom: 8
- },
+  },
  cidadeTextInput: {
    padding: 12,
    borderBottomColor: '#FF9800',
