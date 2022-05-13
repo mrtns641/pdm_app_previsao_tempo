@@ -52,7 +52,7 @@ export default function App() {
         <FlatList 
           data={previsoes}
           renderItem={p => (
-            <PrevisaoItem previsao={p.item} />
+            <PrevisaoItem previsao={p.item}/>
           )}
         />
       </View>
@@ -73,5 +73,4 @@ const styles = StyleSheet.create({
    borderBottomWidth: 2,
    marginBottom: 4
  }
-
 });

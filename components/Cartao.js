@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import PrevisaoItem from './PrevisaoItem'
 
 const Cartao = (props) => {
   return (
