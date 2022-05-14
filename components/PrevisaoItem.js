@@ -7,8 +7,11 @@ import {
 import React from 'react'
 import Cartao from './Cartao'
 
+//props = {previsao: {...}}
+//const { previsao } = props
+
 const PrevisaoItem = ({previsao}) => {
-    //const p = props.previsao
+    // const dt = previsao.item.dt
     const dt = previsao.dt
     const temp_min = previsao.main.temp_min
     const temp_max = previsao.main.temp_max
@@ -26,7 +29,7 @@ const PrevisaoItem = ({previsao}) => {
                 />
                 <View>
                     <View style={styles.primeiraLinha}>
-                        <Text>{new (dt * 1000).toLocaleString()} - {description}</Text>
+                        <Text>{new Date(dt * 1000).toLocaleString()} - {description}</Text>
                     </View>
                     <View style={styles.segundaLinha}>
                         <Text style={styles.valor}>Min: {temp_min+"\u00B0C"}</Text>
@@ -36,7 +39,7 @@ const PrevisaoItem = ({previsao}) => {
                 </View>
             </View>
         </Cartao>
-    );
+    )
 }
 
 export default PrevisaoItem
@@ -60,7 +63,7 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'center',
-        marginTop: 4,
+        marginTop: 6,
         borderTopWidth: 1,
         borderTopColor: '#DDD'
     },
